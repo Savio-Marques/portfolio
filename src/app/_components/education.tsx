@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const Education = () => {
   return (
-    <section className="px-6 max-w-2xl mx-auto py-7 ">
+    <section className="px-6 max-w-3xl mx-auto py-7 ">
       <div className="grid md:grid-cols-2 gap-12">
         {/*Formação */}
         <motion.div

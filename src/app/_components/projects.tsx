@@ -82,7 +82,7 @@ const projects: Project[] = [
 
 export const Projects = () => {
   return (
-    <section className="px-6 max-w-2xl mx-auto">
+    <section className="px-6 max-w-3xl mx-auto">
       <motion.h3 
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}

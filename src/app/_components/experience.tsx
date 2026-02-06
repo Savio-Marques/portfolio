@@ -26,7 +26,7 @@ const experiences: ExperienceItem[] = [
 
 export const Experience = () => {
   return (
-    <section className="px-6 max-w-2xl mx-auto py-16">
+    <section className="px-6 max-w-3xl mx-auto py-16">
       {/* Título da Seção */}
       <motion.h3 
         initial={{ opacity: 0, x: -20 }}

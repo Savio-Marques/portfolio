@@ -11,7 +11,7 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} // Só anima uma vez
             transition={{ delay: 0.2 }}
-            className="px-6 max-w-2xl mx-auto py-10"
+            className="px-6 max-w-3xl mx-auto py-10"
         >
 
             <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-700">
