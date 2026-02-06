@@ -44,7 +44,7 @@ const projects: Project[] = [
     subtitle: "Meu site de portifólio pessoal.",
     description: "Portifólio desenvolvido para prática em Front-end, apresentação e exibição de projetos pessoais ou acadêmicos.",
     technologies: ["Next.js", "Tailwind CSS", "Typescript", "Frame motion", "Figma", "Git"],
-    link: "https://github.com/seusrousuario/repo-univox",
+    link: "https://github.com/Savio-Marques/portfolio",
     features: [
       "Desenvolvimento utilizando Next.js e estilizado com Tailwind CSS.",
       "Planejamento inicial no Figma e Photoshop.",
