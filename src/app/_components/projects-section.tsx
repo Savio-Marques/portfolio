@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Terminal, Code2, Cpu, Database, Layers } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
 
 interface Project {
   id: string;
@@ -12,9 +13,8 @@ interface Project {
   link: string;
   features: string[];
   category: string;
-  icon: typeof Terminal;
   gradient: string;
-  codeSnippet?: string;
+  images: string[];
 }
 
 const projects: Project[] = [
@@ -23,21 +23,16 @@ const projects: Project[] = [
     title: "API de Controle de Estoque",
     subtitle: "Sistema completo de gestão de inventário com segurança JWT",
     category: "Full Stack & Back-end",
-    icon: Database,
     gradient: "from-emerald-500/20 via-emerald-900/10 to-transparent",
     description:
       "Plataforma Full Stack desenvolvida para gerenciamento eficiente de produtos. O back-end em Java garante a integridade dos dados e regras de negócio complexas, enquanto o front-end em React oferece uma experiência fluida para o usuário final.",
     technologies: ["Java", "Spring Boot", "React", "PostgreSQL", "JWT", "Swagger", "Git"],
     link: "https://github.com/Savio-Marques/estoque-backend",
-    codeSnippet: `@RestController
-@RequestMapping("/api/v1/estoque")
-public class EstoqueController {
-    @PostMapping("/produtos")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<ProdutoDTO> criar(@Valid @RequestBody ProdutoDTO dto) {
-        return ResponseEntity.ok(estoqueService.salvar(dto));
-    }
-}`,
+    images: [
+      "/projects/estoque-1.png",
+      "/projects/estoque-2.png",
+      "/projects/estoque-3.png",
+    ],
     features: [
       "API RESTful completa com 24 endpoints documentados via Swagger.",
       "Autenticação e Autorização robusta com Spring Security e JWT.",
@@ -50,19 +45,16 @@ public class EstoqueController {
     title: "Univox - Fórum Acadêmico",
     subtitle: "Plataforma colaborativa universitária desenvolvida em equipe",
     category: "Full Stack (Scrum)",
-    icon: Layers,
     gradient: "from-purple-500/20 via-purple-900/10 to-transparent",
     description:
       "Projeto acadêmico desenvolvido em equipe (6 pessoas) focado na interação entre estudantes universitários. Atuei como um dos desenvolvedores principais da arquitetura de back-end em Django e na estruturação do banco de dados.",
     technologies: ["Python", "Django", "React", "PostgreSQL", "Scrum", "JWT", "Git"],
     link: "https://github.com/Joelio-Pinheiro/UniVox-Backend",
-    codeSnippet: `class PostagemViewSet(viewsets.ModelViewSet):
-    queryset = Postagem.objects.all().order_by('-data_criacao')
-    serializer_class = PostagemSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def perform_create(self, serializer):
-        serializer.save(autor=self.request.user)`,
+    images: [
+      "/projects/univox1.png",
+      "/projects/univox2.png",
+      "/projects/univox3.png",
+    ],
     features: [
       "Metodologia ágil Scrum com sprints semanais e quadros Kanban.",
       "Sistema de postagens, comentários e curtidas em tempo real.",
@@ -71,25 +63,25 @@ public class EstoqueController {
     ],
   },
   {
-    id: "portfolio",
-    title: "Portfólio Pessoal",
-    subtitle: "Website pessoal desenvolvido com Next.js e Tailwind CSS",
-    category: "Front-end & UI/UX",
-    icon: Code2,
-    gradient: "from-teal-500/20 via-teal-900/10 to-transparent",
+    id: "telegram-bot",
+    title: "Bot para Telegram",
+    subtitle: "Automação inteligente e integração de serviços via API",
+    category: "Back-end & Automação",
+    gradient: "from-sky-500/20 via-sky-900/10 to-transparent",
     description:
-      "Portfólio moderno construído para apresentar minha trajetória, projetos e habilidades técnicas. Projetado com estética dark tech premium, arquitetura single-page e animações fluidas.",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion", "Figma", "Git"],
-    link: "https://github.com/Savio-Marques/portfolio",
-    codeSnippet: `export const metadata: Metadata = {
-  title: "Sávio Marques | Desenvolvedor Back-end",
-  description: "Portfólio de desenvolvimento web.",
-};`,
+      "Sistema de automação desenvolvido para a plataforma Telegram, integrando APIs externas para processamento de comandos em tempo real, respostas automáticas e gerenciamento de fluxo de tarefas.",
+    technologies: ["Python", "Telegram Bot API", "REST APIs", "JSON", "Git"],
+    link: "https://github.com/Savio-Marques",
+    images: [
+      "/projects/telegram%20bot%201.png",
+      "/projects/telegram%20bot%202.png",
+      "/projects/telegram%20bot%203.png",
+    ],
     features: [
-      "Desenvolvimento em Next.js com App Router e Server Components.",
-      "Design System personalizado com Tailwind CSS e variáveis CSS.",
-      "Animações sutis e responsividade aprimorada.",
-      "Deploy contínuo na Vercel.",
+      "Integração nativa com a Telegram Bot API para manipulação de mensagens.",
+      "Arquitetura assíncrona orientada a eventos para respostas instantâneas.",
+      "Tratamento de exceções e logs para alta disponibilidade.",
+      "Estrutura modular facilitando a adição de novos comandos.",
     ],
   },
   {
@@ -97,16 +89,16 @@ public class EstoqueController {
     title: "Gerador de Cenário Ray Casting",
     subtitle: "Renderizador 3D construído do zero em C++ puro",
     category: "Computação Gráfica",
-    icon: Cpu,
     gradient: "from-amber-500/20 via-amber-900/10 to-transparent",
     description:
       "Projeto desenvolvido para a cadeira de Computação Gráfica na UFC. Trata-se de um motor de renderização no modelo ray casting capaz de calcular interseções de raios com formas geométricas e aplicar texturas e iluminação.",
     technologies: ["C++", "ImGui", "SDL2", "Stb Image", "Álgebra Linear", "Git"],
     link: "https://github.com/Savio-Marques/cg-project",
-    codeSnippet: `Vec3 color = calculateRayIntersection(ray, sceneObjects);
-for (auto& light : sceneLights) {
-    color += computePhongShading(intersectionPoint, normal, light);
-}`,
+    images: [
+      "/projects/raycast%201.png",
+      "/projects/raycast%202.png",
+      "/projects/raycast%203.png",
+    ],
     features: [
       "Aplicação direta de álgebra linear e geometria analítica.",
       "Criação livre de cenários com iluminação Phong e sombras.",
@@ -119,23 +111,16 @@ for (auto& light : sceneLights) {
     title: "Calculadora de Sistemas por Seidel e Jacobi",
     subtitle: "Resolução iterativa de sistemas lineares de grande porte",
     category: "Métodos Numéricos",
-    icon: Terminal,
     gradient: "from-emerald-500/20 via-indigo-900/10 to-transparent",
     description:
       "Ferramenta construída em equipe (5 pessoas) para resolução de Sistemas Lineares com N variáveis utilizando os métodos numéricos iterativos de Gauss-Seidel e Jacobi. O motor de cálculo em C++ foi compilado para WebAssembly.",
     technologies: ["C++", "JavaScript", "Emscripten", "WebAssembly", "Scrum", "Git"],
     link: "https://github.com/Tobnobre/Metodos-Numericos-Sistemas-Lineares-AbalosSismicos-matrizes-",
-    codeSnippet: `void gaussSeidel(double** A, double* B, double* X, int n, double tol) {
-    while (error > tol && iter < MAX_ITER) {
-        for (int i = 0; i < n; i++) {
-            double sum = B[i];
-            for (int j = 0; j < n; j++) {
-                if (i != j) sum -= A[i][j] * X[j];
-            }
-            X[i] = sum / A[i][i];
-        }
-    }
-}`,
+    images: [
+      "/projects/metodos%20numericos%201.png",
+      "/projects/metodos%20numericos%202.png",
+      "/projects/metodos%20numericos%203.png",
+    ],
     features: [
       "Cálculos de alta performance implementados em C++.",
       "Compilação para WebAssembly via Emscripten para rodar no navegador.",
@@ -146,6 +131,8 @@ for (auto& light : sceneLights) {
 ];
 
 export const ProjectsSection = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section id="projetos" className="py-24 px-6 max-w-5xl mx-auto scroll-mt-20">
       {/* Header */}
@@ -169,7 +156,6 @@ export const ProjectsSection = () => {
       {/* Editorial Vertical Projects List */}
       <div className="space-y-24">
         {projects.map((project, index) => {
-          const Icon = project.icon;
           return (
             <motion.article
               key={project.id}
@@ -184,46 +170,39 @@ export const ProjectsSection = () => {
                 className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient}`}
               />
 
-              {/* Mockup Preview Container */}
-              <div className="w-full aspect-[16/9] md:aspect-[21/9] rounded-xl bg-zinc-950 border border-white/10 overflow-hidden relative flex flex-col shadow-lg shadow-black/40">
-                {/* Window Control Header */}
-                <div className="px-4 py-3 bg-zinc-900/90 border-b border-white/5 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-red-500/80" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                    <span className="w-3 h-3 rounded-full bg-green-500/80" />
-                    <span className="ml-2 text-xs font-mono-tech text-zinc-500">
-                      {project.id}.src
-                    </span>
-                  </div>
-                  <span className="text-[11px] font-mono-tech text-emerald-400 bg-emerald-950/50 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-                    {project.category}
-                  </span>
-                </div>
+              {/* Gallery Strip Header & Badge */}
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-mono-tech text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-500/30 font-medium">
+                  {project.category}
+                </span>
+                <span className="text-xs font-mono-tech text-zinc-500">
+                  3 Telas • Clique para ampliar
+                </span>
+              </div>
 
-                {/* Code / Visual Mockup Content */}
-                <div className="flex-1 p-4 md:p-6 font-mono-tech text-xs md:text-sm text-zinc-300 overflow-x-auto flex flex-col justify-between bg-zinc-950/90">
-                  <div className="flex items-start gap-3">
-                    <div className="p-2.5 rounded-xl bg-zinc-900 border border-white/10 text-emerald-400 shadow-sm">
-                      <Icon size={20} />
+              {/* Interactive Horizontal Gallery Accordion */}
+              <div className="w-full flex flex-col md:flex-row gap-3 h-auto md:h-[340px]">
+                {project.images.map((imgUrl, imgIdx) => (
+                  <div
+                    key={imgIdx}
+                    onClick={() => setSelectedImage(imgUrl)}
+                    className="relative overflow-hidden rounded-xl border border-white/10 bg-zinc-950 flex-1 md:hover:flex-[2.4] transition-all duration-500 ease-out group/img cursor-pointer shadow-lg shadow-black/40 min-h-[200px] md:min-h-0"
+                  >
+                    <img
+                      src={imgUrl}
+                      alt={`${project.title} - Screenshot ${imgIdx + 1}`}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-105"
+                    />
+                    
+                    {/* Dark gradient overlay that fades on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent md:opacity-60 md:group-hover/img:opacity-0 transition-opacity duration-300 pointer-events-none" />
+
+                    {/* Screenshot Badge */}
+                    <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-zinc-900/90 border border-white/10 text-[10px] font-mono-tech text-zinc-300 backdrop-blur-md opacity-90 md:group-hover/img:opacity-100 transition-opacity">
+                      Tela {imgIdx + 1}
                     </div>
-                    <div>
-                      <p className="text-zinc-200 font-semibold">{project.title}</p>
-                      <p className="text-zinc-500 text-xs">{project.subtitle}</p>
-                    </div>
                   </div>
-
-                  {project.codeSnippet && (
-                    <pre className="my-3 p-3 rounded-lg bg-zinc-900/60 border border-white/5 text-zinc-400 overflow-x-auto text-[11px] md:text-xs leading-relaxed">
-                      <code>{project.codeSnippet}</code>
-                    </pre>
-                  )}
-
-                  <div className="flex items-center justify-between text-[11px] text-zinc-500 pt-2 border-t border-white/5">
-                    <span>Status: Concluído</span>
-                    <span className="text-emerald-400">Git branch: main</span>
-                  </div>
-                </div>
+                ))}
               </div>
 
               {/* Project Info Header */}
@@ -279,6 +258,28 @@ export const ProjectsSection = () => {
           );
         })}
       </div>
+
+      {/* Lightbox Modal for Enlarged Screenshots */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100000] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8 cursor-zoom-out"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-5xl max-h-[90vh] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+            <img
+              src={selectedImage}
+              alt="Ampliada"
+              className="w-full h-full object-contain max-h-[85vh]"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-zinc-900/90 text-white text-xs font-mono-tech border border-white/20 hover:bg-zinc-800"
+            >
+              Fechar ✕
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
