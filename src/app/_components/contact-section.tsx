@@ -95,7 +95,7 @@ export const ContactSection = () => {
                 <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs font-mono-tech text-zinc-400 truncate">{item.value}</p>
+                <p className="text-xs font-mono-tech text-zinc-400 break-all">{item.value}</p>
               </div>
             </motion.a>
           );
@@ -107,17 +107,17 @@ export const ContactSection = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="p-8 rounded-2xl glass-card flex flex-col sm:flex-row items-center justify-between gap-6 border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-zinc-950 to-zinc-950 shadow-xl"
+        className="p-5 sm:p-8 rounded-2xl glass-card flex flex-col sm:flex-row items-center justify-between gap-6 border-emerald-500/20 bg-gradient-to-br from-emerald-950/20 via-zinc-950 to-zinc-950 shadow-xl"
       >
         <div className="space-y-2 text-center sm:text-left">
           <h3 className="text-lg font-bold text-white">Prefere copiar o e-mail diretamente?</h3>
-          <p className="text-xs font-mono-tech text-zinc-400">saviomarquessouza@gmail.com</p>
+          <p className="text-xs font-mono-tech text-zinc-400 break-all">saviomarquessouza@gmail.com</p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full sm:w-auto">
           <button
             onClick={handleCopyEmail}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800/90 border border-zinc-700/80 hover:border-emerald-500/50 text-zinc-200 text-xs font-semibold transition-all hover:-translate-y-0.5 active:scale-95 shadow-sm"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800/90 border border-zinc-700/80 hover:border-emerald-500/50 text-zinc-200 text-xs font-semibold transition-all hover:-translate-y-0.5 active:scale-95 shadow-sm"
           >
             {copied ? (
               <>
@@ -136,7 +136,7 @@ export const ContactSection = () => {
             href="/curriculo.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white text-xs font-semibold transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] border border-emerald-400/30 hover:-translate-y-0.5 active:scale-95"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white text-xs font-semibold transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] border border-emerald-400/30 hover:-translate-y-0.5 active:scale-95"
           >
             <FileText size={14} />
             Baixar CV

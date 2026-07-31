@@ -26,7 +26,7 @@ export const Hero = () => {
           className="flex flex-col items-start gap-8 max-w-3xl"
         >
           {/* Availability Badge & Location */}
-          <div className="flex items-center gap-3 text-xs font-mono-tech tracking-wider text-zinc-400">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono-tech tracking-wider text-zinc-400">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 font-medium shadow-[0_0_15px_rgba(16,185,129,0.2)]">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
               Disponível para oportunidades
@@ -37,7 +37,7 @@ export const Hero = () => {
 
           {/* Main Title & Subtitle */}
           <div className="space-y-4">
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight text-white leading-[1.08]">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight text-white leading-[1.08]">
               Sávio Marques
             </h1>
             <h2 className="text-xl md:text-2xl font-medium text-zinc-300 tracking-tight">

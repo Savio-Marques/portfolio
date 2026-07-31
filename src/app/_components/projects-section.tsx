@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Project {
   id: string;
@@ -25,7 +25,7 @@ const projects: Project[] = [
     category: "Full Stack & DevOps",
     gradient: "from-emerald-500/20 via-emerald-900/10 to-transparent",
     description:
-      "Plataforma comercial criada para ajudar pequenos e médios comerciantes no controle de estoque, categorias e pagamentos pendentes de clientes. Possui autenticação segura por token JWT, dashboard com alertas de reposição em tempo real, pipeline automatizada de integração contínua (CI/CD via GitHub Actions), back-end em nuvem AWS EC2 e front-end responsivo hospedado na Vercel.",
+      "Plataforma comercial de alta performance criada para ajudar pequenos e médios comerciantes no controle de estoque, categorias e pagamentos pendentes de clientes. Possui autenticação segura por token JWT, dashboard com alertas de reposição em tempo real, pipeline automatizada de integração contínua (CI/CD via GitHub Actions), back-end em nuvem AWS EC2 e front-end responsivo hospedado na Vercel.",
     technologies: ["Java 21", "Spring Boot 3", "React 18", "TanStack Query", "PostgreSQL", "Docker", "AWS EC2", "GitHub Actions"],
     link: "https://buscapestoque.vercel.app",
     images: [
@@ -65,13 +65,13 @@ const projects: Project[] = [
   {
     id: "univox",
     title: "UniVox — Fórum & Rede Acadêmica",
-    subtitle: "Plataforma colaborativa universitária desenvolvida em equipe",
+    subtitle: "Plataforma colaborativa universitária desenvolvida em equipe com metodologia ágil (Scrum)",
     category: "Full Stack & Trabalho em Equipe",
     gradient: "from-purple-500/20 via-purple-900/10 to-transparent",
     description:
       "Plataforma web de comunicação criada para conectar estudantes e professores universitários, promovendo a troca de conhecimento e fóruns de discussão. Desenvolvida em equipe de 6 integrantes utilizando metodologia ágil Scrum com entregas semanais. Atuei na arquitetura da API em Python (Django 5.2) e na interface reativa em React com Material UI.",
     technologies: ["Python 3.13", "Django 5.2", "Django REST", "React.js", "PostgreSQL", "Docker", "Material UI", "Tailwind CSS"],
-    link: "https://github.com/Savio-Marques/univox-backend",
+    link: "https://github.com/Joelio-Pinheiro/UniVox-Backend",
     images: [
       "/projects/univox1.png",
       "/projects/univox2.png",
@@ -115,7 +115,7 @@ const projects: Project[] = [
     description:
       "Aplicação de engenharia e métodos numéricos para resolução de sistemas lineares de grande porte aplicados à simulação de abalos sísmicos e deslocamentos de estruturas. O motor de cálculo de alta velocidade em C++ foi compilado diretamente para WebAssembly (WASM), permitindo executar simulações matemáticas complexas direto no navegador.",
     technologies: ["C++", "WebAssembly (Emscripten)", "JavaScript", "HTML5/CSS3", "Métodos Numéricos", "Scrum"],
-    link: "https://metodos-numericos-1.vercel.app/",
+    link: "https://github.com/Tobnobre/Metodos-Numericos-Sistemas-Lineares-AbalosSismicos-matrizes-",
     images: [
       "/projects/metodos%20numericos%201.png",
       "/projects/metodos%20numericos%202.png",
@@ -133,6 +133,18 @@ const projects: Project[] = [
 export const ProjectsSection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
+
   return (
     <section id="projetos" className="py-24 px-6 max-w-5xl mx-auto scroll-mt-20">
       {/* Header */}
@@ -148,7 +160,7 @@ export const ProjectsSection = () => {
         </span>
         <h2 className="font-display text-4xl md:text-6xl text-white">Projetos em Destaque</h2>
         <p className="text-zinc-400 text-base max-w-[60ch] leading-relaxed">
-          Uma seleção dos meus principais projetos em engenharia de software, desenvolvimento full stack, inteligência artificial e computação gráfica.
+          Uma seleção dos meus principais projetos em engenharia de software, desenvolvimento full stack, inteligência artificial e computação gráfica — combinando valor de negócio e alta qualidade técnica.
         </p>
       </motion.div>
 
@@ -170,7 +182,7 @@ export const ProjectsSection = () => {
               />
 
               {/* Gallery Strip Header & Badge */}
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-[11px] font-mono-tech text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-500/30 font-medium">
                   {project.category}
                 </span>
@@ -179,13 +191,13 @@ export const ProjectsSection = () => {
                 </span>
               </div>
 
-              {/* Interactive Horizontal Gallery Accordion */}
-              <div className="w-full flex flex-col md:flex-row gap-3 h-auto md:h-[340px]">
+              {/* Interactive Horizontal Gallery Accordion / Mobile Snap Carousel */}
+              <div className="w-full flex flex-row overflow-x-auto snap-x snap-mandatory h-[220px] sm:h-[260px] md:h-[340px] md:overflow-visible gap-3 pb-2 md:pb-0 scrollbar-none">
                 {project.images.map((imgUrl, imgIdx) => (
                   <div
                     key={imgIdx}
                     onClick={() => setSelectedImage(imgUrl)}
-                    className="relative overflow-hidden rounded-xl border border-white/10 bg-zinc-950 flex-1 md:hover:flex-[2.4] transition-all duration-500 ease-out group/img cursor-pointer shadow-lg shadow-black/40 min-h-[200px] md:min-h-0"
+                    className="relative overflow-hidden rounded-xl border border-white/10 bg-zinc-950 min-w-[85%] sm:min-w-[65%] md:min-w-0 md:flex-1 md:hover:flex-[2.4] snap-center shrink-0 md:shrink md:snap-align-none transition-all duration-500 ease-out group/img cursor-pointer shadow-lg shadow-black/40 h-full"
                   >
                     <img
                       src={imgUrl}
@@ -272,7 +284,7 @@ export const ProjectsSection = () => {
             />
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-zinc-900/90 text-white text-xs font-mono-tech border border-white/20 hover:bg-zinc-800"
+              className="absolute top-4 right-4 px-4 py-2.5 rounded-xl bg-zinc-900/90 text-white text-sm font-mono-tech border border-white/20 hover:bg-zinc-800 transition-all active:scale-95 shadow-lg"
             >
               Fechar ✕
             </button>

@@ -18,9 +18,9 @@ export const ExperienceSection = () => {
         </div>
 
         <div className="relative pl-6 border-l border-white/10 space-y-10">
-          <div className="relative group">
+          <div className="group">
             {/* Timeline Dot */}
-            <span className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-zinc-800 border-2 border-violet-500 group-hover:bg-violet-500 transition-colors" />
+            <span className="absolute -left-[5.5px] top-1.5 w-3 h-3 rounded-full bg-zinc-800 border-2 border-violet-500 group-hover:bg-violet-500 transition-colors" />
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
               <h4 className="text-lg font-bold text-white group-hover:text-violet-300 transition-colors">

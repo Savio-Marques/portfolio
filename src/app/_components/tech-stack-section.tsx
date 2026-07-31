@@ -89,7 +89,7 @@ export const TechStackSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-              className="p-5 rounded-2xl glass-card border border-white/5 space-y-4 hover:border-emerald-500/30 transition-all group"
+              className="p-4 sm:p-5 rounded-2xl glass-card border border-white/5 space-y-4 hover:border-emerald-500/30 transition-all group"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 border-b border-white/5 pb-3">
@@ -102,7 +102,7 @@ export const TechStackSection = () => {
               </div>
 
               {/* Badges Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
                 {cat.items.map((tech) => (
                   <div
                     key={tech.name}
@@ -118,7 +118,7 @@ export const TechStackSection = () => {
                         (e.target as HTMLImageElement).style.display = "none";
                       }}
                     />
-                    <span className="text-xs font-mono-tech font-medium text-zinc-300 truncate">
+                    <span className="text-[11px] sm:text-xs font-mono-tech font-medium text-zinc-300 truncate">
                       {tech.name}
                     </span>
                   </div>

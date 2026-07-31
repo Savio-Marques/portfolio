@@ -12,12 +12,12 @@ export const Footer = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-6 text-zinc-400">
+        <div className="flex items-center gap-3 text-zinc-400">
           <a
             href="https://github.com/Savio-Marques"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
+            className="p-2.5 rounded-xl bg-zinc-900/60 border border-white/5 hover:border-white/20 hover:text-white transition-all active:scale-95"
             aria-label="GitHub"
           >
             <Github size={18} />
@@ -26,14 +26,14 @@ export const Footer = () => {
             href="https://www.linkedin.com/in/savio-marques/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
+            className="p-2.5 rounded-xl bg-zinc-900/60 border border-white/5 hover:border-white/20 hover:text-white transition-all active:scale-95"
             aria-label="LinkedIn"
           >
             <Linkedin size={18} />
           </a>
           <a
             href="mailto:saviomarquessouza@gmail.com"
-            className="hover:text-white transition-colors"
+            className="p-2.5 rounded-xl bg-zinc-900/60 border border-white/5 hover:border-white/20 hover:text-white transition-all active:scale-95"
             aria-label="Email"
           >
             <Mail size={18} />
