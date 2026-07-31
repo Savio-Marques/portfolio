@@ -47,10 +47,10 @@ export const Hero = () => {
 
           {/* Brief Pitch */}
           <p className="text-base md:text-lg text-zinc-400 leading-relaxed max-w-[55ch]">
-            Graduando em Ciência da Computação (UFC). Especializado em APIs REST escaláveis com{" "}
-            <span className="text-zinc-200 font-semibold">Java Spring Boot</span>,{" "}
-            <span className="text-zinc-200 font-semibold">PostgreSQL</span> e interfaces reativas com{" "}
-            <span className="text-zinc-200 font-semibold">Next.js & React</span>.
+            Graduando em Ciência da Computação (UFC). Especializado em{" "}
+            <span className="text-zinc-200 font-semibold">Full Stack com Java Spring Boot,</span>{" "}
+            <span className="text-zinc-200 font-semibold">Docker, AWS, Azure e OCI</span> e interfaces com{" "}
+            <span className="text-zinc-200 font-semibold">React & Next.js</span>.
           </p>
 
           {/* Action Buttons */}

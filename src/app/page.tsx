@@ -9,8 +9,9 @@ import { ContactSection } from "./_components/contact-section";
 export default function Home() {
   return (
     <>
-      {/* Unified Global Ambient Lights (Fixed across the entire single-page layout) */}
+      {/* Unified Global Ambient Lights & Grid Background */}
       <div className="global-bg-lights">
+        <div className="global-grid-pattern" />
         <div className="glow-emerald-top" />
         <div className="glow-violet-top" />
         <div className="glow-emerald-mid" />

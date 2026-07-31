@@ -20,57 +20,35 @@ interface Project {
 const projects: Project[] = [
   {
     id: "estoque",
-    title: "API de Controle de Estoque",
-    subtitle: "Sistema completo de gestão de inventário com segurança JWT",
-    category: "Full Stack & Back-end",
+    title: "BuscapEstoque — Sistema de Gestão & Finanças",
+    subtitle: "Plataforma comercial em nuvem com API Spring Boot, Frontend React 18 e deploy automatizado na AWS",
+    category: "Full Stack & DevOps",
     gradient: "from-emerald-500/20 via-emerald-900/10 to-transparent",
     description:
-      "Plataforma Full Stack desenvolvida para gerenciamento eficiente de produtos. O back-end em Java garante a integridade dos dados e regras de negócio complexas, enquanto o front-end em React oferece uma experiência fluida para o usuário final.",
-    technologies: ["Java", "Spring Boot", "React", "PostgreSQL", "JWT", "Swagger", "Git"],
-    link: "https://github.com/Savio-Marques/estoque-backend",
+      "Plataforma comercial criada para ajudar pequenos e médios comerciantes no controle de estoque, categorias e pagamentos pendentes de clientes. Possui autenticação segura por token JWT, dashboard com alertas de reposição em tempo real, pipeline automatizada de integração contínua (CI/CD via GitHub Actions), back-end em nuvem AWS EC2 e front-end responsivo hospedado na Vercel.",
+    technologies: ["Java 21", "Spring Boot 3", "React 18", "TanStack Query", "PostgreSQL", "Docker", "AWS EC2", "GitHub Actions"],
+    link: "https://buscapestoque.vercel.app",
     images: [
       "/projects/estoque-1.png",
       "/projects/estoque-2.png",
       "/projects/estoque-3.png",
     ],
     features: [
-      "API RESTful completa com 24 endpoints documentados via Swagger.",
-      "Autenticação e Autorização robusta com Spring Security e JWT.",
-      "Front-end responsivo em React totalmente integrado à API.",
-      "Logs estruturados e validações de dados rigorosas.",
-    ],
-  },
-  {
-    id: "univox",
-    title: "Univox - Fórum Acadêmico",
-    subtitle: "Plataforma colaborativa universitária desenvolvida em equipe",
-    category: "Full Stack (Scrum)",
-    gradient: "from-purple-500/20 via-purple-900/10 to-transparent",
-    description:
-      "Projeto acadêmico desenvolvido em equipe (6 pessoas) focado na interação entre estudantes universitários. Atuei como um dos desenvolvedores principais da arquitetura de back-end em Django e na estruturação do banco de dados.",
-    technologies: ["Python", "Django", "React", "PostgreSQL", "Scrum", "JWT", "Git"],
-    link: "https://github.com/Joelio-Pinheiro/UniVox-Backend",
-    images: [
-      "/projects/univox1.png",
-      "/projects/univox2.png",
-      "/projects/univox3.png",
-    ],
-    features: [
-      "Metodologia ágil Scrum com sprints semanais e quadros Kanban.",
-      "Sistema de postagens, comentários e curtidas em tempo real.",
-      "Documentação completa de Requisitos e Histórias de Usuário.",
-      "Entrega consistente de rotas seguras e limpas.",
+      "Automação em Nuvem: Deploy automático na AWS EC2 (Docker/Nginx com SSL) via GitHub Actions e front-end na Vercel.",
+      "Segurança & Controle: Login seguro com JWT (Auth0), interceptores automáticos de sessão e restrição de acesso por perfil.",
+      "Gestão Comercial em Tempo Real: Dashboard com contadores dinâmicos, alerta de estoque baixo (≤ 5 un.) e controle de contas a receber.",
+      "Interface Acessível & Responsiva: Front-end em React 18 em conformidade com padrões de acessibilidade (WCAG) para celular e PC.",
     ],
   },
   {
     id: "telegram-bot",
-    title: "Bot para Telegram",
-    subtitle: "Automação inteligente e integração de serviços via API",
-    category: "Back-end & Automação",
+    title: "ShapeLog Bot — Assistente Fitness com IA",
+    subtitle: "Assistente virtual no Telegram que interpreta mensagens de voz e texto com Google Gemini (Vertex AI)",
+    category: "Back-end & Inteligência Artificial",
     gradient: "from-sky-500/20 via-sky-900/10 to-transparent",
     description:
-      "Sistema de automação desenvolvido para a plataforma Telegram, integrando APIs externas para processamento de comandos em tempo real, respostas automáticas e gerenciamento de fluxo de tarefas.",
-    technologies: ["Python", "Telegram Bot API", "REST APIs", "JSON", "Git"],
+      "Assistente virtual inteligente para Telegram projetado para simplificar a rotina de saúde e treinos do usuário. Utiliza Inteligência Artificial (Google Vertex AI - Gemini 2.5 Flash via Spring AI) para compreender relatos em áudio e texto natural, extraindo e calculando automaticamente calorias, macronutrientes, exercícios e cargas. Executado em containers isolados na nuvem Oracle Cloud.",
+    technologies: ["Java 17", "Spring Boot 3", "Spring AI", "Google Vertex AI (Gemini)", "Telegram API", "PostgreSQL", "Docker", "Oracle Cloud"],
     link: "https://github.com/Savio-Marques",
     images: [
       "/projects/telegram%20bot%201.png",
@@ -78,21 +56,43 @@ const projects: Project[] = [
       "/projects/telegram%20bot%203.png",
     ],
     features: [
-      "Integração nativa com a Telegram Bot API para manipulação de mensagens.",
-      "Arquitetura assíncrona orientada a eventos para respostas instantâneas.",
-      "Tratamento de exceções e logs para alta disponibilidade.",
-      "Estrutura modular facilitando a adição de novos comandos.",
+      "Processamento de Áudio por IA: Transcreve e interpreta áudios cotidianos extraindo alimentos e treinos automaticamente.",
+      "Relatórios Diários Visuais: Acompanhamento em gráficos de metas nutricionais de calorias, proteínas, carboidratos e gorduras.",
+      "Edição Rápida & Prática: Correção interativa de refeições ou séries por botões de clique rápido (Inline Buttons) no Telegram.",
+      "Segurança & Nuvem: Controle de acesso restrito (Whitelist de usuários) rodando 24/7 em container Docker na Oracle Cloud.",
+    ],
+  },
+  {
+    id: "univox",
+    title: "UniVox — Fórum & Rede Acadêmica",
+    subtitle: "Plataforma colaborativa universitária desenvolvida em equipe",
+    category: "Full Stack & Trabalho em Equipe",
+    gradient: "from-purple-500/20 via-purple-900/10 to-transparent",
+    description:
+      "Plataforma web de comunicação criada para conectar estudantes e professores universitários, promovendo a troca de conhecimento e fóruns de discussão. Desenvolvida em equipe de 6 integrantes utilizando metodologia ágil Scrum com entregas semanais. Atuei na arquitetura da API em Python (Django 5.2) e na interface reativa em React com Material UI.",
+    technologies: ["Python 3.13", "Django 5.2", "Django REST", "React.js", "PostgreSQL", "Docker", "Material UI", "Tailwind CSS"],
+    link: "https://github.com/Savio-Marques/univox-backend",
+    images: [
+      "/projects/univox1.png",
+      "/projects/univox2.png",
+      "/projects/univox3.png",
+    ],
+    features: [
+      "Gestão Ágil em Equipe: Organização em sprints semanais com papéis Scrum e acompanhamento continuo em quadro Kanban.",
+      "Recursos de Comunicação: Sistema completo de postagens, curtidas em tempo real e suporte a comentários aninhados em árvore.",
+      "Modelagem Avançada de Banco de Dados: Estrutura polimórfica em PostgreSQL para gerenciamento flexível de votos e conteúdos.",
+      "Integração Fluida & Segura: Front-end em React integrado via Axios, verificação de e-mail e documentação interativa Swagger.",
     ],
   },
   {
     id: "raycasting",
-    title: "Gerador de Cenário Ray Casting",
-    subtitle: "Renderizador 3D construído do zero em C++ puro",
-    category: "Computação Gráfica",
+    title: "Engine de Renderização 3D (Ray Tracing)",
+    subtitle: "Motor de computação gráfica 3D fotorrealista construído do zero em C++17 puro",
+    category: "Computação Gráfica & Alto Desempenho",
     gradient: "from-amber-500/20 via-amber-900/10 to-transparent",
     description:
-      "Projeto desenvolvido para a cadeira de Computação Gráfica na UFC. Trata-se de um motor de renderização no modelo ray casting capaz de calcular interseções de raios com formas geométricas e aplicar texturas e iluminação.",
-    technologies: ["C++", "ImGui", "SDL2", "Stb Image", "Álgebra Linear", "Git"],
+      "Motor de Ray Tracing 3D interativo desenvolvido do zero em C++17 para a disciplina de Computação Gráfica na UFC. Demonstra alto domínio de programação de baixo nível e matemática aplicada, calculando iluminação realista (modelo Phong), sombras rígidas, texturas de imagem e seleção de objetos por clique de mouse.",
+    technologies: ["C++17", "SDL2", "Dear ImGui", "STB Image", "Álgebra Linear 3D", "Make"],
     link: "https://github.com/Savio-Marques/cg-project",
     images: [
       "/projects/raycast%201.png",
@@ -100,32 +100,32 @@ const projects: Project[] = [
       "/projects/raycast%203.png",
     ],
     features: [
-      "Aplicação direta de álgebra linear e geometria analítica.",
-      "Criação livre de cenários com iluminação Phong e sombras.",
-      "Mapeamento e carregamento de texturas via Stb Image.",
-      "Interface gráfica para ajuste de parâmetros em tempo real via ImGui.",
+      "Simulação Gráfica Fotorrealista: Interseções analíticas de raio com esferas, cubos, cones, cilindros, planos e triângulos.",
+      "Iluminação Avançada & Sombras: Cálculo de sombras rígidas (Shadow Rays) e modelos de luz ambiente, pontual, solar e de foco (Spotlight).",
+      "Seleção por Clique (Ray Picking): Permite clicar com o mouse diretamente na tela 3D para identificar e selecionar objetos no espaço.",
+      "Interface de Controle em Tempo Real: Painel gráfico (Dear ImGui) para ajustar luzes, câmera e materiais sem reiniciar a aplicação.",
     ],
   },
   {
     id: "seidel-jacobi",
-    title: "Calculadora de Sistemas por Seidel e Jacobi",
-    subtitle: "Resolução iterativa de sistemas lineares de grande porte",
-    category: "Métodos Numéricos",
+    title: "Simulador de Abalos Sísmicos em WebAssembly",
+    subtitle: "Calculadora de alta performance científica em C++ compilada para rodar nativamente no navegador",
+    category: "Métodos Numéricos & WebAssembly",
     gradient: "from-emerald-500/20 via-indigo-900/10 to-transparent",
     description:
-      "Ferramenta construída em equipe (5 pessoas) para resolução de Sistemas Lineares com N variáveis utilizando os métodos numéricos iterativos de Gauss-Seidel e Jacobi. O motor de cálculo em C++ foi compilado para WebAssembly.",
-    technologies: ["C++", "JavaScript", "Emscripten", "WebAssembly", "Scrum", "Git"],
-    link: "https://github.com/Tobnobre/Metodos-Numericos-Sistemas-Lineares-AbalosSismicos-matrizes-",
+      "Aplicação de engenharia e métodos numéricos para resolução de sistemas lineares de grande porte aplicados à simulação de abalos sísmicos e deslocamentos de estruturas. O motor de cálculo de alta velocidade em C++ foi compilado diretamente para WebAssembly (WASM), permitindo executar simulações matemáticas complexas direto no navegador.",
+    technologies: ["C++", "WebAssembly (Emscripten)", "JavaScript", "HTML5/CSS3", "Métodos Numéricos", "Scrum"],
+    link: "https://metodos-numericos-1.vercel.app/",
     images: [
       "/projects/metodos%20numericos%201.png",
       "/projects/metodos%20numericos%202.png",
       "/projects/metodos%20numericos%203.png",
     ],
     features: [
-      "Cálculos de alta performance implementados em C++.",
-      "Compilação para WebAssembly via Emscripten para rodar no navegador.",
-      "Interface interativa para entrada flexível de matrizes e limiares.",
-      "Metodologia ágil Scrum para divisão de tarefas do time.",
+      "Velocidade Nativa na Web: Código C++ compilado para WebAssembly (Emscripten) rodando no navegador com alta performance.",
+      "Tratamento de Exceções & Estabilidade: Validação de critérios de convergência (Diagonal Dominante e Sassenfeld) e detecção de erros.",
+      "Gestão Eficiente de Memória: Alocação dinâmica de memória em C++ sem vazamentos (zero memory leaks) na comunicação com o JavaScript.",
+      "Trabalho em Equipe: Projeto acadêmico em time de 5 integrantes com foco em matemática computacional e desenvolvimento ágil.",
     ],
   },
 ];
@@ -148,8 +148,7 @@ export const ProjectsSection = () => {
         </span>
         <h2 className="font-display text-4xl md:text-6xl text-white">Projetos em Destaque</h2>
         <p className="text-zinc-400 text-base max-w-[60ch] leading-relaxed">
-          Uma seleção dos meus principais projetos em back-end, computação gráfica e aplicações full
-          stack, demonstrando código limpo, arquitetura sólida e resolução de problemas.
+          Uma seleção dos meus principais projetos em engenharia de software, desenvolvimento full stack, inteligência artificial e computação gráfica.
         </p>
       </motion.div>
 
@@ -223,7 +222,7 @@ export const ProjectsSection = () => {
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800/90 border border-zinc-700/80 hover:border-emerald-500/50 text-xs font-semibold text-zinc-200 hover:text-white transition-all active:scale-95 shadow-sm hover:-translate-y-0.5 w-fit"
                 >
                   <Github size={14} />
-                  Ver no GitHub
+                  Ver Projeto
                   <ExternalLink size={12} className="text-zinc-400 group-hover:text-emerald-400" />
                 </a>
               </div>

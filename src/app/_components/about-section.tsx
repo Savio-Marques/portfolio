@@ -22,18 +22,18 @@ export const AboutSection = () => {
 
         <div className="space-y-4 text-zinc-300 leading-relaxed text-base md:text-lg max-w-[65ch]">
           <p>
-            Graduando em Ciência da Computação pela Universidade Federal do Ceará (UFC), atuo como
-            Desenvolvedor Full Stack com foco principal na construção de{" "}
-            <span className="text-white font-medium">
-              back-ends robustos, seguros e escaláveis
-            </span>
-            .
+            Graduando em Ciência da Computação pela Universidade Federal do Ceará (UFC), atuo como{" "}
+            <span className="text-white font-medium">Desenvolvedor Full Stack</span> com foco principal na construção de{" "}
+            <span className="text-emerald-400 font-medium">back-end</span>.
           </p>
           <p>
-            Minha experiência técnica combina o desenvolvimento de APIs RESTful com{" "}
-            <span className="text-emerald-400 font-medium">Java (Spring Boot)</span>, linguagens de alto
-            desempenho como C++ e Python, banco de dados PostgreSQL, conteinerização com Docker e a criação
-            de interfaces reativas e modernas com React e Next.js.
+            Direciono meus estudos para desenvolvimento de APIs RESTful com{" "}
+            <span className="text-emerald-400 font-medium">Java (Spring Boot)</span> e outras linguagens como{" "}
+            <span className="text-zinc-200 font-medium">C++ e Python</span>, banco de dados{" "}
+            <span className="text-zinc-200 font-medium">PostgreSQL</span>, conteinerização com{" "}
+            <span className="text-zinc-200 font-medium">Docker</span>, criação de interfaces com{" "}
+            <span className="text-zinc-200 font-medium">React e Next.js</span> e computação em nuvem como{" "}
+            <span className="text-emerald-400 font-medium">AWS, Azure e Oracle Cloud Infrastructure</span>.
           </p>
         </div>
 
