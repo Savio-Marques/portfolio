@@ -27,7 +27,7 @@ const projects: Project[] = [
     description:
       "Plataforma comercial de alta performance criada para ajudar pequenos e médios comerciantes no controle de estoque, categorias e pagamentos pendentes de clientes. Possui autenticação segura por token JWT, dashboard com alertas de reposição em tempo real, pipeline automatizada de integração contínua (CI/CD via GitHub Actions), back-end em nuvem AWS EC2 e front-end responsivo hospedado na Vercel.",
     technologies: ["Java 21", "Spring Boot 3", "React 18", "TanStack Query", "PostgreSQL", "Docker", "AWS EC2", "GitHub Actions"],
-    link: "https://buscapestoque.vercel.app",
+    link: "https://github.com/Savio-Marques/estoque-backend",
     images: [
       "/projects/estoque-1.png",
       "/projects/estoque-2.png",
@@ -49,7 +49,7 @@ const projects: Project[] = [
     description:
       "Assistente virtual inteligente para Telegram projetado para simplificar a rotina de saúde e treinos do usuário. Utiliza Inteligência Artificial (Google Vertex AI - Gemini 2.5 Flash via Spring AI) para compreender relatos em áudio e texto natural, extraindo e calculando automaticamente calorias, macronutrientes, exercícios e cargas. Executado em containers isolados na nuvem Oracle Cloud.",
     technologies: ["Java 17", "Spring Boot 3", "Spring AI", "Google Vertex AI (Gemini)", "Telegram API", "PostgreSQL", "Docker", "Oracle Cloud"],
-    link: "https://github.com/Savio-Marques",
+    link: "https://github.com/Savio-Marques/ShapeLog.ai",
     images: [
       "/projects/telegram%20bot%201.png",
       "/projects/telegram%20bot%202.png",
@@ -71,7 +71,7 @@ const projects: Project[] = [
     description:
       "Plataforma web de comunicação criada para conectar estudantes e professores universitários, promovendo a troca de conhecimento e fóruns de discussão. Desenvolvida em equipe de 6 integrantes utilizando metodologia ágil Scrum com entregas semanais. Atuei na arquitetura da API em Python (Django 5.2) e na interface reativa em React com Material UI.",
     technologies: ["Python 3.13", "Django 5.2", "Django REST", "React.js", "PostgreSQL", "Docker", "Material UI", "Tailwind CSS"],
-    link: "https://github.com/Joelio-Pinheiro/UniVox-Backend",
+    link: "https://github.com/Savio-Marques/univox-backend",
     images: [
       "/projects/univox1.png",
       "/projects/univox2.png",
@@ -115,7 +115,7 @@ const projects: Project[] = [
     description:
       "Aplicação de engenharia e métodos numéricos para resolução de sistemas lineares de grande porte aplicados à simulação de abalos sísmicos e deslocamentos de estruturas. O motor de cálculo de alta velocidade em C++ foi compilado diretamente para WebAssembly (WASM), permitindo executar simulações matemáticas complexas direto no navegador.",
     technologies: ["C++", "WebAssembly (Emscripten)", "JavaScript", "HTML5/CSS3", "Métodos Numéricos", "Scrum"],
-    link: "https://github.com/Tobnobre/Metodos-Numericos-Sistemas-Lineares-AbalosSismicos-matrizes-",
+    link: "https://metodos-numericos-1.vercel.app/",
     images: [
       "/projects/metodos%20numericos%201.png",
       "/projects/metodos%20numericos%202.png",
